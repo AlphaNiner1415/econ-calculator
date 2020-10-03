@@ -13,8 +13,8 @@ class App extends Component {
     }
     getFactor = (desiredSymbol, givenSymbol, interest, year) =>{
         var factor = 0.0;
-        var posInterest = Math.pow(1+interest,year);
-        var negInterest = Math.pow(1+interest,-1*year);
+        var posInterest = Math.pow(parseFloat(1.0)+parseFloat(interest),year);
+        var negInterest = 1/posInterest;
         if(desiredSymbol === "P"){
             switch (givenSymbol) {
                 case "F":
@@ -61,8 +61,11 @@ class App extends Component {
     calc = (desiredSymbol, givenSymbol, interest, year, amount) => {
         var returnValue = amount;
         var factor = 0.0;
-        var posInterest = Math.pow(1+interest,year);
-        var negInterest = Math.pow(1+interest,-1*year);
+        
+        var posInterest = Math.pow(parseFloat(1.0)+parseFloat(interest),year);
+        console.log(parseFloat(1.0) + parseFloat(interest));
+        var negInterest = 1/posInterest;
+        console.log(negInterest);
         if(desiredSymbol === "P"){
             switch (givenSymbol) {
                 case "F":
@@ -103,6 +106,7 @@ class App extends Component {
                     break;
             }
         }
+        console.log(factor);
         return returnValue*factor;
     }
     handleSubmit(event){
@@ -113,6 +117,7 @@ class App extends Component {
         const [desiredSymbol, givenSymbol, interest, year, amount] = [data.get("desiredSymbol").toUpperCase(), data.get("givenSymbol").toUpperCase(), data.get("interest"), data.get("years"), data.get("amount")];
         console.log(desiredSymbol);
         console.log(givenSymbol);
+        
         const result1 = this.calc(desiredSymbol,givenSymbol, interest, year, amount);
         const factor1 = this.getFactor(desiredSymbol, givenSymbol, interest, year);
         
