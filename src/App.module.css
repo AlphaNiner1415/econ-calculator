@@ -1,5 +1,8 @@
 .App{
     margin: 10px 10px;
+    background-color: white;
+    height: 100%;
+    padding: 5px;
 }
 .Form {
     display: flex;
@@ -31,6 +34,12 @@
 }
 
 .AnsLabel {
-    margin: 5px 10px;
+    margin: 10px 10px;
     color: red;
+}
+
+@media (max-width: 500px){
+    .Span input[type="text"], label{
+        display: block;
+    }
 }

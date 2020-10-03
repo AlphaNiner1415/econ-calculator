@@ -134,7 +134,7 @@ class App extends Component {
             <div className={classes.App}>
                 <h1>Cash Flow Calculator</h1>
                 <form className={classes.Form} onSubmit={this.handleSubmit}>
-                <span>
+                <span className={classes.Span}>
                     <label htmlFor="desiredSymbol">Desired Symbol: </label>
                     <input
                     id="desiredSymbol"
