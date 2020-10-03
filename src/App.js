@@ -110,8 +110,9 @@ class App extends Component {
         
         const form = event.target;
         const data = new FormData(form);
-        const [desiredSymbol, givenSymbol, interest, year, amount] = [data.get("desiredSymbol"), data.get("givenSymbol"), data.get("interest"), data.get("years"), data.get("amount")];
-        
+        const [desiredSymbol, givenSymbol, interest, year, amount] = [data.get("desiredSymbol").toUpperCase(), data.get("givenSymbol").toUpperCase(), data.get("interest"), data.get("years"), data.get("amount")];
+        console.log(desiredSymbol);
+        console.log(givenSymbol);
         const result1 = this.calc(desiredSymbol,givenSymbol, interest, year, amount);
         const factor1 = this.getFactor(desiredSymbol, givenSymbol, interest, year);
         
