@@ -1,0 +1,27 @@
+.Form {
+    display: flex;
+    flex-direction: column;
+    
+}
+.Values {
+    display: inline;
+}
+
+.Form label {
+    margin: 0px 10px;
+}
+
+.Form input[type="text"]{
+    display: inline;
+    margin: 5px auto;
+    padding: 5px;
+    justify-self: center;
+}
+
+.Form input[type="number"] {
+    padding: 5px;
+}
+.Form input[type="submit"] {
+    margin: 10px auto;
+    width: 50%;
+}
