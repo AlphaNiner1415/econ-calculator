@@ -1,3 +1,6 @@
+.App{
+    margin: 10px 10px;
+}
 .Form {
     display: flex;
     flex-direction: column;
@@ -8,7 +11,7 @@
 }
 
 .Form label {
-    margin: 5px 10px;
+    margin: 5px 0px;
 }
 
 .Form input[type="text"]{

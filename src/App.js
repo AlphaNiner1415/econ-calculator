@@ -125,7 +125,7 @@ class App extends Component {
     }
     render(){
         return (
-            <div>
+            <div className={classes.App}>
                 <h1>Cash Flow Calculator</h1>
                 <form className={classes.Form} onSubmit={this.handleSubmit}>
                 <span>
