@@ -8,7 +8,7 @@
 }
 
 .Form label {
-    margin: 0px 10px;
+    margin: 5px 10px;
 }
 
 .Form input[type="text"]{
@@ -23,5 +23,11 @@
 }
 .Form input[type="submit"] {
     margin: 10px auto;
+    height: 40px;
     width: 50%;
+}
+
+.AnsLabel {
+    margin: 5px 10px;
+    color: red;
 }

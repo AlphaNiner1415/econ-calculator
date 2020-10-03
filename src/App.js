@@ -110,11 +110,11 @@ class App extends Component {
         
         const form = event.target;
         const data = new FormData(form);
-        const [desiredSymbol, givenSymbol, interest, year, amount] = [data.get("desiredSymbol"), data.get("givenSymbol"), data.get("interest"), data.get("year"), data.get("amount")];
-        console.log(data.get("desiredSymbol"));
+        const [desiredSymbol, givenSymbol, interest, year, amount] = [data.get("desiredSymbol"), data.get("givenSymbol"), data.get("interest"), data.get("years"), data.get("amount")];
+        
         const result1 = this.calc(desiredSymbol,givenSymbol, interest, year, amount);
         const factor1 = this.getFactor(desiredSymbol, givenSymbol, interest, year);
-        console.log(result1);
+        
         this.setState(() => {
             return {
                 result: result1,
@@ -125,30 +125,44 @@ class App extends Component {
     }
     render(){
         return (
-          <div>
-            <form className={classes.Form} onSubmit={this.handleSubmit}>
-              <span>
-                <label htmlFor="desiredSymbol">Desired Symbol: </label>
+            <div>
+                <h1>Cash Flow Calculator</h1>
+                <form className={classes.Form} onSubmit={this.handleSubmit}>
+                <span>
+                    <label htmlFor="desiredSymbol">Desired Symbol: </label>
+                    <input
+                    id="desiredSymbol"
+                    name="desiredSymbol"
+                    type="text"
+                    ></input>
+                    <label htmlFor="givenSymbol">Given Symbol: </label>
+                    <input id="givenSymbol" name="givenSymbol" type="text"></input>
+                </span>
+                <br></br>
+                <label htmlFor="interest">Interest: </label>
                 <input
-                  id="desiredSymbol"
-                  name="desiredSymbol"
-                  type="text"
+                    id="interest"
+                    name="interest"
+                    type="number"
+                    step="0.01"
+                    min="0"
                 ></input>
-                <label htmlFor="givenSymbol">Given Symbol: </label>
-                <input id="givenSymbol" name="givenSymbol" type="text"></input>
-              </span>
-              <br></br>
-              <input id="interest" name="interest" type="number" step="0.01" min="0"></input>
-              <br></br>
-              <input id="years" name="years" type="number" min="0"></input>
-              <br></br>
-              <input id="amount" name="amount" type="number" min="0"></input>
-              <br></br>
-              <input value="Submit" type="submit" />
-            </form>
-            <label>Result: {this.state.result}</label>
-            <label>Factor: {this.state.factor}</label>
-          </div>
+                <br></br>
+                <label htmlFor="years">Years: </label>
+                <input id="years" name="years" type="number" min="0"></input>
+                <br></br>
+                <label htmlFor="amount">Amount: </label>
+                <input id="amount" name="amount" type="number" min="0"></input>
+                <br></br>
+                <input value="Submit" type="submit" />
+                </form>
+                <label className={classes.AnsLabel}>
+                Result: {this.state.result}
+                </label>
+                <label className={classes.AnsLabel}>
+                Factor: {this.state.factor}
+                </label>
+            </div>
         );
     };
 }
