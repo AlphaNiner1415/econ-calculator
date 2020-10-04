@@ -12,9 +12,13 @@ class App extends Component {
         factor: 0
     }
     getFactor = (desiredSymbol, givenSymbol, interest, year) =>{
+        
         var factor = 0.0;
+        
         var posInterest = Math.pow(parseFloat(1.0)+parseFloat(interest),year);
+        
         var negInterest = 1/posInterest;
+        
         if(desiredSymbol === "P"){
             switch (givenSymbol) {
                 case "F":
@@ -24,7 +28,8 @@ class App extends Component {
                     factor = (posInterest-1)/(interest*posInterest);
                     break;
                 case "G":
-                    factor = (1.0/interest)*(((posInterest-1)/interest*posInterest) - year/posInterest);
+                    factor = (1.0/interest)*((posInterest-1)/(interest*posInterest) - year/posInterest);
+                    console.log(factor);
                     break;
                 default:
                     factor = 1;
@@ -63,9 +68,9 @@ class App extends Component {
         var factor = 0.0;
         
         var posInterest = Math.pow(parseFloat(1.0)+parseFloat(interest),year);
-        console.log(parseFloat(1.0) + parseFloat(interest));
+        
         var negInterest = 1/posInterest;
-        console.log(negInterest);
+        
         if(desiredSymbol === "P"){
             switch (givenSymbol) {
                 case "F":
@@ -75,7 +80,8 @@ class App extends Component {
                     factor = (posInterest-1)/(interest*posInterest);
                     break;
                 case "G":
-                    factor = (1.0/interest)*(((posInterest-1)/interest*posInterest) - year/posInterest);
+                    factor = (1.0/interest)*((posInterest-1)/(interest*posInterest) - year/posInterest);
+                    console.log(factor);
                     break;
                 default:
                     factor = 1;
@@ -106,8 +112,8 @@ class App extends Component {
                     break;
             }
         }
-        console.log(factor);
-        return returnValue*factor;
+        
+        return parseFloat(returnValue)*factor;
     }
     handleSubmit(event){
         event.preventDefault();
