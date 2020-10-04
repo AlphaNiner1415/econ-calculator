@@ -1,13 +1,13 @@
 .App{
     margin: 10px 10px;
-    background-color: white;
+    color: white;
     height: 100%;
     padding: 5px;
 }
 .Form {
     display: flex;
     flex-direction: column;
-    
+    align-items: center;;
 }
 .Values {
     display: inline;
@@ -18,25 +18,76 @@
 }
 
 .Form input[type="text"]{
-    display: inline;
-    margin: 5px auto;
+    display: inline-block;
+    margin: 5px 10px 5px 0px;
     padding: 5px;
+    width: auto;
     justify-self: center;
+    border-radius: 20px;
+    border: 0;
+    background: none;
+    text-align: center;
+    border: 2px solid #1876ce;
+    padding: 14px 5px;
+    font-size: 1rem;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    box-sizing: border-box;
 }
 
 .Form input[type="number"] {
-    padding: 5px;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 1rem;
+    width: 100px;
+    border: 0;
+    background: none;
+    text-align: left;
+    border: 2px solid #1876ce;
+    padding: 14px 5px;
+    font-size: 1rem;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    box-sizing: border-box;
 }
 .Form input[type="submit"] {
-    margin: 10px auto;
-    height: 40px;
-    width: 50%;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+.Form input[type="submit"]:hover {
+    background: #2ecc71;
 }
 
 .AnsLabel {
     margin: 10px 10px;
     color: red;
 }
+
+.Form input[type="text"]:hover, input[type="number"]:hover{
+    border: 2px solid #188bce;
+}
+.Form input[type="text"]:focus{
+    border: 2px solid #18ce79;
+}
+.Form input[type="number"]:focus{
+    border: 2px solid #18ce79;
+    width: 200px;
+}
+
 
 @media (max-width: 500px){
     .Span input[type="text"], label{
